@@ -16,3 +16,10 @@ export const selectImageData = () => {
     state => state.data,
   );
 }
+
+export const selectCellSizeFactor = () => {
+  return createSelector(
+    selectGeneratorPage,
+    state => state.cellSizeFactor,
+  );
+}

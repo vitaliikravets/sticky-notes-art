@@ -1,8 +1,9 @@
-import { IMAGE_SELECTED, IMAGE_DATA_READ } from './constants';
+import { IMAGE_SELECTED, IMAGE_DATA_READ, CELL_SIZE_FACTOR_CHANGED } from './constants';
 
 export const initialState = {
   file: null,
-  data: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
+  data: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
+  cellSizeFactor: 10
 }
 
 const generatorReduce = (state = initialState, action) => {
@@ -14,6 +15,10 @@ const generatorReduce = (state = initialState, action) => {
     case IMAGE_DATA_READ:
       return Object.assign({}, state, {
         data: action.data
+      });
+    case CELL_SIZE_FACTOR_CHANGED:
+      return Object.assign({}, state, {
+        cellSizeFactor: action.value
       });
     default:
       return state;

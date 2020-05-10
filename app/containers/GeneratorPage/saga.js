@@ -24,24 +24,6 @@ function readImage(file) {
   });
 }
 
-// export function* imageDataRead() {
-//   const imageData = yield select(selectImageData());
-//   const image = yield call(loadImage, imageData);
-//   console.log(image);
-// }
-//
-// function loadImage(imageData){
-//   return new Promise(resolve => {
-//     const image = new Image();
-//     image.style.display = 'none';
-//     image.onload = () => {
-//       resolve(image);
-//     }
-//     image.onerror = () => reject('Image could not load data.');
-//     image.src = imageData;
-//   });
-// }
-
 /**
  * Root saga manages watcher lifecycle
  */

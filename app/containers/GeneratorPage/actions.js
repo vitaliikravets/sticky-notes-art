@@ -1,4 +1,4 @@
-import { IMAGE_SELECTED, IMAGE_DATA_READ } from './constants';
+import { IMAGE_SELECTED, IMAGE_DATA_READ, CELL_SIZE_FACTOR_CHANGED } from './constants';
 
 export function imageSelected(event) {
   const files = [ ...event.target.files ];
@@ -11,6 +11,13 @@ export function imageSelected(event) {
 export function imageDataRead(data){
   return {
     type: IMAGE_DATA_READ,
-    data: data
+    data: data,
   };
+}
+
+export function changeCellSizeFactor(event){
+  return {
+    type: CELL_SIZE_FACTOR_CHANGED,
+    value: event.target.value,
+  }
 }
